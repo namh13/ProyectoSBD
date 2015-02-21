@@ -1,0 +1,7 @@
+class Book < ActiveRecord::Base
+  attr_accessible :idbook, :name, :idauthor, :ideditorial
+  belongs_to :book
+  belongs_to :book
+  belongs_to :editorial
+  belongs_to :author
+end

@@ -1,0 +1,31 @@
+<h1> Editoriales </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>IdEditorial </th>
+      <th> Nombre</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @editorials.each do |editorial| %>
+      <tr>
+        <td><%= editorial.ideditorial %></td>
+        <td><%= editorial.name %></td>
+	<td><%= %></td>
+        <td><%= %></td>
+        <td><%= link_to 'Mostrar', editorial %></td>
+        <td><%= link_to 'Editar', edit_editorial_path(editorial) %></td>
+        <td><%= link_to 'Eliminar', editorial, method: :delete, data: { confirm: 'Esta seguro que desea Eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Editorial', new_editorial_path %>
